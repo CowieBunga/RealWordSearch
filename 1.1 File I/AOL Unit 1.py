@@ -122,12 +122,13 @@ while con == 0:  # allows the user to play again if they want to
                 if flag:  # flag variable that determines if the word found an open position
                     i += 1 # if that is the case, the definition moves on to the next word
 
-            fillRandom(wordsearch, size)
+            #fillRandom(wordsearch, size)
             display(wordsearch, size)
             # after the grid has been filled with random words and displayed, it breaks the loop
             break
     count = 0
     guessed = []
+    print(usedwords)
     while used > count:  # runs the loop until all words are guessed
         userinput = input("\nPlease input a word that you find: ").upper()  # guess need to be uppercase
         if userinput in usedwords and userinput not in guessed:
@@ -155,4 +156,3 @@ while con == 0:  # allows the user to play again if they want to
             print("Scores were reset")
         else:
             print("Not valid input!")
-#test
