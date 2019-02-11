@@ -155,3 +155,4 @@ while con == 0:  # allows the user to play again if they want to
             print("Scores were reset")
         else:
             print("Not valid input!")
+#test
