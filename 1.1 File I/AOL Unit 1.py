@@ -128,7 +128,6 @@ while con == 0:  # allows the user to play again if they want to
             break
     count = 0
     guessed = []
-    #woah h
     while used > count:  # runs the loop until all words are guessed
         userinput = input("\nPlease input a word that you find: ").upper()  # guess need to be uppercase
         if userinput in usedwords and userinput not in guessed:
