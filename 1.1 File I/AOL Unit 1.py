@@ -6,7 +6,11 @@ import random
 #######################################################
 '''
 
-# this function displays the board
+'''
+this function displays the board. see comments/code below for details
+'''
+
+
 def display(wordsearch, size):
     for row in range(0, size):  # goes through each row
         line = ""  # create space (visual)
@@ -15,7 +19,12 @@ def display(wordsearch, size):
             # and each new letter in the list is added onto the variable
         print(line)  # prints each row after the column values have been assigned to each spot
 
-# this def checks each row and column to see if there is a blank space, and if so, it replaces it with a random letter
+'''
+this def checks each row and column to see if there is a blank space, and if so, it replaces it with a random letter.
+see comments below for details
+'''
+
+
 def fillRandom(wordsearch, size):
     alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     for row in range(0, size):
@@ -23,8 +32,13 @@ def fillRandom(wordsearch, size):
             if wordsearch[row][col] == "_":
                 randletter = random.choice(alph)  # chooses a random letter from variable 'alph'
                 wordsearch[row][col] = randletter  # replaces the blank space with a random letter
+'''
+this def adds words to the main list 'wordsearch'. it chooses randomly whether to insert it vertically, horizontally,
+backwards or forwards. one major problem I faced was finding a way to make sure the correct number of words go into
+the corresponding difficulty, which is what the flag variable is for.
+'''
 
-#this def adds words to the main list 'wordsearch'
+
 def addWord(word, wordsearch, size, used, usedwords):
     rand = random.randint(0, 1)
     rand2 = random.randint(0, 1)  # had to create another random variable to put it in either fwd or bwd
