@@ -144,7 +144,7 @@ while con == 0:  # allows the user to play again if they want to
     while True:  # for defensive coding
         again = input("\nInput 'a' if you want to play again, input 's' if you want to stop playing, or input 'w' "
                       "if you want to wipe save data\n")
-        if again == 'a': # breaks this loop, but the main loop continues
+        if again == 'a':  # breaks this loop, but the main loop continues
             break
         elif again == 's':
             print("Thank you for playing word search")
