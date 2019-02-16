@@ -1,3 +1,4 @@
+# DAY 1
 
 '''
 dic = {"year": 2019, "Car": "Honda Civic"}
@@ -30,17 +31,38 @@ print(dic)
 
 # DAY 2
 
+'''
+#problem 1
 
+dic = {"A": 1, "B": 2, "C": 3, "D": ["Hello", "My dude"]}
+for key, val in dic.items():
+    if isinstance(val, list):
+        for i in range(len(val)):
+            print(val[i])
+    else:
+        print(val)
+'''
+
+
+'''
+#problem #2
 def returnkey(values, dic):
     for key, vals in dic.items():
         if vals == values[i]:
             return key
-
-
 values = ["a", "b", "c", "d"]
 dic = {"first": "a", "second": "b", "third": "c", "fourth": "d"}
 for i in range(0, 4):
     key = print(returnkey(values, dic))
+'''
+
+'''
+# problem #3
+list = ["a", "b", "c"]
+dic = {0: "a", 2: "b", 3: "c"}
+print(list[0])
+print(dic[0])
+'''
 
 '''
 #problem number 4
@@ -53,12 +75,15 @@ print(dict)
 '''
 
 
-'''
+
 #problem number 5
 def listtodic(listofstr):
-    dictOfWords = {i: 5 for i in listofstr}
-    return dictOfWords
+    dic = {}
+    for i in range(len(listofstr)):
+        dic[i] = listofstr[i]
+    #dictOfWords = {i: 5 for i in listofstr}
+    return dic
 listofstr = ["a", "b", "c"]
 print(listtodic(listofstr))
-'''
+
 
