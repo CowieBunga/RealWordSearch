@@ -75,7 +75,7 @@ print(dict)
 '''
 
 
-
+'''
 #problem number 5
 def listtodic(listofstr):
     dic = {}
@@ -85,5 +85,5 @@ def listtodic(listofstr):
     return dic
 listofstr = ["a", "b", "c"]
 print(listtodic(listofstr))
-
+'''
 
