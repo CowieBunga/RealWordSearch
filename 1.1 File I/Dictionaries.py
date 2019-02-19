@@ -59,7 +59,7 @@ for i in range(0, 4):
 '''
 # problem #3
 list = ["a", "b", "c"]
-dic = {0: "a", 2: "b", 3: "c"}
+dic = {0: "a", 1: "b", 2: "c"}
 print(list[0])
 print(dic[0])
 '''
