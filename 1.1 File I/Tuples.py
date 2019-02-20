@@ -1,9 +1,10 @@
 '''
-Use a series of length 2 tuples to insert points in a 2d list (which would be a representation of the graph) and print it as a graph.
-Create a dictionary of strings and tuples that hold speeds for streets in both km/h and mph and then allow it to be searchable via user input.
-Make a function that takes in a dictionary and returns a list of tuples containing each key value pair.
+1 - Use a series of length 2 tuples to insert points in a 2d list (which would be a representation of the graph) and print it as a graph.
+2 - Create a dictionary of strings and tuples that hold speeds for streets in both km/h and mph and then allow it to be searchable via user input.
+3 - Make a function that takes in a dictionary and returns a list of tuples containing each key value pair.
 '''
 
+'''
 grid = []
 
 for i in range(0, 5):
@@ -26,10 +27,7 @@ for i in range(0, 5):
     for j in range(0, 5):
         line = line + grid[i][j] + " "
     print(line)
-
-
-
-
+'''
 
 '''
 dict = {"alabama": ("50", '31.07'), "canada": ("60", '37.28'), "california": ("70", '43.50')}
@@ -55,7 +53,3 @@ def tuple_dict(dict):
 dict = {"key1": (1, 15), "key2": "hello", "key3": ("my", "apple")}
 list1 = print(tuple_dict(dict))
 '''
-
-
-
-
