@@ -46,6 +46,7 @@ for key, val in dic.items():
 
 '''
 #problem #2
+
 def returnkey(values, dic):
     for key, vals in dic.items():
         if vals == values[i]:
@@ -58,6 +59,7 @@ for i in range(0, 4):
 
 '''
 # problem #3
+
 list = ["a", "b", "c"]
 dic = {0: "a", 1: "b", 2: "c"}
 print(list[0])
@@ -66,6 +68,7 @@ print(dic[0])
 
 '''
 #problem number 4
+
 dict = {}
 for i in range(0, 3):
     word = input("Please input a word ")
@@ -77,6 +80,7 @@ print(dict)
 
 '''
 #problem number 5
+
 def listtodic(listofstr):
     dic = {}
     for i in range(len(listofstr)):
@@ -86,4 +90,3 @@ def listtodic(listofstr):
 listofstr = ["a", "b", "c"]
 print(listtodic(listofstr))
 '''
-
