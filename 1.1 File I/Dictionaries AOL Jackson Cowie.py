@@ -23,7 +23,7 @@ print(results)  # prints the correct returned value
 import csv
 data = {}
 info = []
-names = ['Jackson', 'Alex', 'Becky', 'Jeremy', 'Chris', 'Owen']
+names = ('Jackson', 'Alex', 'Becky', 'Jeremy', 'Chris', 'Owen')
 
 with open('database', 'r') as database:
     read = csv.reader(database)
@@ -33,29 +33,29 @@ for i in range(len(rows)):
         data[names[i]] = rows[i]
 
 while True:
-    name = input("Please input the name of the student you would like to search: ").title()
+    name = input("Please input the first name of the student you would like to search: ").title()
     if name in names:
-        fname = input("FIRST NAME? (y or n) ")
+        fname = input("FIRST NAME? (y for yes) ")
         if fname == 'y':
             F = data[name][0]
         else:
             F = ''
-        lname = input("LAST NAME? (y or n) ")
+        lname = input("LAST NAME? (y for yes) ")
         if lname == 'y':
             L = data[name][1]
         else:
             L = ''
-        grade = input("GRADE? (y or n) ")
+        grade = input("GRADE? (y for yes) ")
         if grade == 'y':
             G = data[name][2]
         else:
             G = ''
-        house = input("HOUSE? (y or n) ")
+        house = input("HOUSE? (y for yes) ")
         if house == 'y':
             H = data[name][3]
         else:
             H = ''
-        advisor = input("ADVISOR? (y or n) ")
+        advisor = input("ADVISOR? (y for yes) ")
         if advisor == 'y':
             A = data[name][4]
         else:
@@ -67,10 +67,6 @@ while True:
         print("ADVISOR: ", A)
     else:
         print("That name was not in the database. Try again")
-
-
-
-
 
 '''
 def one_hop(flights, city1, city2):
@@ -132,10 +128,7 @@ else:
         #this loop above goes through the guesses and checks if they are 2's, and if so, adds it to a variable. to 
         calculate experimental probability (y) the number of times '2' shows up in the list of guesses is divided
         by the total number of guesses. If 2 shows up the majority of the time, then the computer will guess 2.
-        otherwise, it will guess 1
-        
-
-       
+        otherwise, it will guess 1 
 '''
 
 
