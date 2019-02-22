@@ -24,35 +24,37 @@ print(results)  # prints the correct returned value
 import csv
 data = {}
 info = []
-names = ('Jackson', 'Alex', 'Becky', 'Jeremy', 'Chris', 'Owen')
+names = ('Cowie', 'Dart', 'Otton', 'Gomes', 'Ridolfi', 'Bates') # chose tuples for names because they can be accessed by
+# index and I don't want them to ever change values
 
 with open('database', 'r') as database:
     read = csv.reader(database)  # syntax that was found online
     rows = [row for row in read]  # this line makes the entire file into a list of lists
 
 for i in range(len(rows)):
-        data[names[i]] = rows[i]  # changes the list into a dictionary by going through the name tuple above and making
-        # the name in each line the key to the values regarding it
+        data[names[i]] = rows[i]  
+        
+        #changes the list into a dictionary by going through the name tuple above and making the name in each line the 
+        #key to the values regarding it. I chose to use a dictionary with lists as values because it would be easy to
+        #access the info by a key, then access the specific information wanted through an index.
 
 while True:  # allows user to continue searching
-    name = input("Please input the first name of the student you would like to search: ").title()
+    name = input("Please input the last name of the student you would like to search: ").title()
     if name in names:  # ensures that the name is valid
-        fname = input("FIRST NAME? (y for yes) ")
-        
         #the series of conditional statements below asks the user if they want to display a certain piece of info, and
         #if they do, it makes a variable dedicated to that information equal to the position that it would be in in
         #the dictionary. otherwise, it makes the value equal to nothing because there would be an error if the value
         #is equal to nothing when it it being displayed.
-        
-        if fname == 'y':
-            F = data[name][0]
-        else:
-            F = ''
         lname = input("LAST NAME? (y for yes) ")
         if lname == 'y':
-            L = data[name][1]
+            L = data[name][0]
         else:
             L = ''
+        fname = input("FIRST NAME? (y for yes) ")
+        if fname == 'y':
+            F = data[name][1]
+        else:
+            F = ''
         grade = input("GRADE? (y for yes) ")
         if grade == 'y':
             G = data[name][2]
@@ -69,16 +71,16 @@ while True:  # allows user to continue searching
         else:
             A = ''
         # code below neatly displays each piece of info whether it is blank or not.
-        print("FNAME: ", F)
         print("LNAME: ", L)
+        print("FNAME: ", F)
         print("GRADE: ", G)
         print("HOUSE: ", H)
         print("ADVISOR: ", A)
     else:
         print("That name was not in the database. Try again")
+
+
 '''
-
-
 '''
 
 the function below goes through each possible flight in the first city inputted. if the 'item' isn't the second second
