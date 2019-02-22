@@ -20,22 +20,30 @@ results = extremeTuple(args)  # results is either max and min or zero depending 
 print(results)  # prints the correct returned value
 '''
 
+'''
 import csv
 data = {}
 info = []
 names = ('Jackson', 'Alex', 'Becky', 'Jeremy', 'Chris', 'Owen')
 
 with open('database', 'r') as database:
-    read = csv.reader(database)
-    rows = [row for row in read]
+    read = csv.reader(database)  # syntax that was found online
+    rows = [row for row in read]  # this line makes the entire file into a list of lists
 
 for i in range(len(rows)):
-        data[names[i]] = rows[i]
+        data[names[i]] = rows[i]  # changes the list into a dictionary by going through the name tuple above and making
+        # the name in each line the key to the values regarding it
 
-while True:
+while True:  # allows user to continue searching
     name = input("Please input the first name of the student you would like to search: ").title()
-    if name in names:
+    if name in names:  # ensures that the name is valid
         fname = input("FIRST NAME? (y for yes) ")
+        
+        #the series of conditional statements below asks the user if they want to display a certain piece of info, and
+        #if they do, it makes a variable dedicated to that information equal to the position that it would be in in
+        #the dictionary. otherwise, it makes the value equal to nothing because there would be an error if the value
+        #is equal to nothing when it it being displayed.
+        
         if fname == 'y':
             F = data[name][0]
         else:
@@ -60,6 +68,7 @@ while True:
             A = data[name][4]
         else:
             A = ''
+        # code below neatly displays each piece of info whether it is blank or not.
         print("FNAME: ", F)
         print("LNAME: ", L)
         print("GRADE: ", G)
@@ -67,8 +76,18 @@ while True:
         print("ADVISOR: ", A)
     else:
         print("That name was not in the database. Try again")
+'''
+
 
 '''
+
+the function below goes through each possible flight in the first city inputted. if the 'item' isn't the second second
+city (as we don't want to go right there), it will check if city 2 is in the listed flights in one of the other 
+destinations of city 1. if the flight to the second city is available, the variable x is increased by one. then, it 
+checks if the value of x is greater than or equal to 1 (could possibly have two one-hop flights) and if so, it returns
+true.
+
+
 def one_hop(flights, city1, city2):
     x = 0
     for item in flights[city1]:
@@ -81,36 +100,37 @@ def one_hop(flights, city1, city2):
         return False
 
 flights = {'Montreal': ['Toronto', 'Tampa Bay'], 'Toronto': ['Montreal', 'Tampa Bay'],
-               'Tampa Bay': ['Atlanta', 'Toronto'], 'Atlanta': ['Tampa Bay']}
+                'Tampa Bay': ['Atlanta', 'Toronto'], 'Atlanta': ['Tampa Bay']}  # the question doesn't imply that the
+# example dict can't be used
 city1 = input("Input first city: ").title()
 city2 = input("Input second city: ").title()
 print(one_hop(flights, city1, city2))
 '''
 
 '''
+the def below chooses the computer's guess depending on the last three inputs by the user. if there is less than three
+values, the comp will guess 2. the computer will choose 1 of 8 combinations depending on the last three guesses.
+
 def choose_guess(guesses):
     if len(guesses) < 3:
         compguess = 2
     else:
         guesses = tuple(guesses)
-        #print(guesses)
+        print(guesses)
         combinations = {(1,1,1): 1, (1,1,2): 1, (1,2,2): 2, (2,2,2): 2, (2,1,1): 1, (2,2,1): 2, (2,1,2): 2, (1,2,1): 1}
         compguess = combinations[guesses]
     return compguess
-
-
 userpoints = 0
 comppoints = 0
-guesses = []
 # scores for user and comp ^
+guesses = []
 while comppoints < 30 and userpoints < 30:  # loop runs until someone reaches 30 points.
-    x = 0
     guess = input("Input a number between 1 and 2 ")
     if guess == '1' or guess == '2':  # had to make it so the guesses were strings for defensive coding
-        guesses.append(int(guess))
+        guesses.append(int(guess))  # makes the guess an integer when appended to the list
         if len(guesses) > 3:
-            del guesses[0]
-        if choose_guess(guesses) == int(guess):
+            del guesses[0]  # deletes the least recent guess if the list is greater than length of 3
+        if choose_guess(guesses) == int(guess):  # runs the function and checks if compguess is equal to userinput
             print("Computer got the point")
             comppoints += 1  # adds point for the comp
         else:
@@ -124,13 +144,4 @@ if userpoints > comppoints:  # outputs certain message depending on who got the 
     print("You Won! Congrats!")
 else:
     print("You lost! The computer bested you.")
-
-        #this loop above goes through the guesses and checks if they are 2's, and if so, adds it to a variable. to 
-        calculate experimental probability (y) the number of times '2' shows up in the list of guesses is divided
-        by the total number of guesses. If 2 shows up the majority of the time, then the computer will guess 2.
-        otherwise, it will guess 1 
 '''
-
-
-
-
